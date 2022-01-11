@@ -1,0 +1,160 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+}
+
+label,input[type="text"],input[type="submit"]{
+	display: block;
+	line-height: 30px;
+	height: 30px;
+	outline: none;
+	font-size: 13pt;
+	width: 100%;
+
+}
+form{
+	width: 330px;
+	background-color: rgba(0, 0, 0,.2);
+	padding: 20px;
+	margin: 40px auto;
+}
+
+h2{
+	text-align: center;
+}
+
+input[type="submit"]{
+	margin-top:10px;
+	cursor: pointer;
+}
+
+.left{
+	width: 35%;
+	float: left;
+}
+
+.right{
+	width: 65%;
+	float: left;
+}
+table{
+	background-color: rgba(0, 0, 0, .2);
+	width: 90%;
+	margin:40px auto;
+}
+tr{
+	line-height: 35px;
+}
+
+tr.titulo{
+	font-weight: bold;
+	color: white;
+	background-color: rgba(0, 0, 0, .6);
+	text-transform: uppercase;
+}
+td{
+	padding: 0px 5px;
+}
+a:link{
+	text-decoration: none;
+	outline: none;
+	background-color: white;
+	color: black !important;
+	padding: 5px;
+	margin: 0px 5px;
+}
+
+@media (max-width: 1000px)
+
+{
+	.left
+	{
+		display: inline-block;
+		margin-left: 4%;
+	}
+
+	.right
+	{
+		float: none;
+		margin-left: 2%;
+	}
+
+}
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+	@media
+	  only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+	    .left
+		{
+			display: inline-block;
+			margin-left: 4%;
+			float: left;
+		}
+
+		.right
+		{
+			float: left;
+			width: 100%;
+			margin-left: 0;
+		}
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		table
+		{
+			min-width: 500px;
+		}
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			padding-left: 50%;
+			position: relative;
+		}
+
+		td:before {
+			/* Now like a table header */
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			padding-right: 10px;
+			white-space: nowrap;
+			position: absolute;
+		}
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "Nome"; }
+		td:nth-of-type(2):before { content: "Telefone"; }
+		td:nth-of-type(3):before { content: "Email"; }
+		td:nth-of-type(4):before { content: ""; }
+
+		td:nth-child(4n)
+		{
+			background-color: white;
+			padding-bottom: 10px;
+		}
+		a:link
+		{
+			background-color: rgba(0, 0, 0, .3);
+		}
+	}

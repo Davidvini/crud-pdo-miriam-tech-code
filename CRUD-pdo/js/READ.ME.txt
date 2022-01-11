@@ -1,0 +1,10 @@
+10/01/2022
+Escrito por: David Vinicius.
+
+**
+Arquivos:
+
+*/
+Toarst => Biblioteca jquery para a criação e manipulação da FUNÇÃO alert.
+Utilizado na CLASSE => crudpessoa.
+*/
